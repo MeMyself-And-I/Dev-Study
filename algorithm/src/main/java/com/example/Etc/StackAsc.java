@@ -23,7 +23,7 @@ public class StackAsc {
                 bf.append("-"); 
             } else {
                 int n = stack.pop();
-                if(n > su) { // pop연산으로 하나 제거했는데도 여전히 큰 경우 더이상 스택을 오름차순 정렬할 수 없기 때문에 로직 종료(스택은 후입선출 구조)
+                if(n > su) { // pop연산으로 추출한 값이 여전히 큰 경우 더이상 스택을 오름차순 정렬할 수 없기 때문에 로직 종료(스택은 후입선출 구조)
                     return "No";
                 } else {
                     bf.append("-");

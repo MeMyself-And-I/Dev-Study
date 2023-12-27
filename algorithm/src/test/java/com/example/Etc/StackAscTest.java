@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.example.Etc.StackAsc;
-
 public class StackAscTest {
     @Test
     public void stackAscTest() {
