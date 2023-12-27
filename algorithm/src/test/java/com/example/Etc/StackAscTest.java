@@ -1,8 +1,10 @@
-package com.example.Programmers.Lv1;
+package com.example.Etc;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.example.Etc.StackAsc;
 
 public class StackAscTest {
     @Test
