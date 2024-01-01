@@ -1,4 +1,4 @@
-package com.example.Etc;
+package com.example.Baekjoon;
 
 /**
  * 백준 온라인 저지 2750 - 수 정렬하기

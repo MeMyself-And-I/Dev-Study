@@ -1,4 +1,4 @@
-package com.example.Etc;
+package com.example.Baekjoon;
 
 import java.util.Stack;
 

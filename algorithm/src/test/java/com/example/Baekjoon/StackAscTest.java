@@ -1,4 +1,4 @@
-package com.example.Etc;
+package com.example.Baekjoon;
 
 import static org.junit.Assert.assertEquals;
 
