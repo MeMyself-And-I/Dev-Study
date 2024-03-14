@@ -1,6 +1,6 @@
 ## OSI 7 계층
 
-![OSI-7-Layer](image.png)
+![OSI-7-Layer](/cs/네트워크/img/OSI-7-Layer.png)
 
 ### OSI 7 계층이란
 
