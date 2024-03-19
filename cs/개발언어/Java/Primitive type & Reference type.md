@@ -56,7 +56,7 @@ Java Data Type
   - double형이 표현 가능 범위가 더 크므로 보다 정밀하게 표현할 수 있다.
   - 자바에서 실수의 기본 타입은 double형이므로 float형을 사용할 경우 알파벳 F를 붙여서 명시해주어야 한다.
 
-## Referencd type(참조형 타입)
+## Reference type(참조형 타입)
 
 - Primitive type을 제외한 모든 타입들이 Reference type이다.
 - 제일 상위 클래스인 Object 클래스를 상속하는 모든 클래스를 말한다.
