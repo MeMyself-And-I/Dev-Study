@@ -1,4 +1,4 @@
-### Primitive type & Reference type
+## Primitive type & Reference type
 
 자바에서는 원시형(Primitive type)과 참조형(Reference type)의 자료형이 존재한다.
 
