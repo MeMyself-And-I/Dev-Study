@@ -20,7 +20,7 @@ public class PrimeNumberSumMin {
         }
 
         // 2부터 시작
-        for (int i = 2; i < arr.length; i++) {
+        for (int i = 2; i < Math.sqrt(arr.length); i++) {
             if (arr[i] == 0) {
                 continue;
             }
