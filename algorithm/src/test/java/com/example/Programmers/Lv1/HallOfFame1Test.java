@@ -4,10 +4,10 @@ import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
-public class HallOfFameTest {
+public class HallOfFame1Test {
     @Test
-    public void testHallOfFame() {
-        HallOfFame h = new HallOfFame();
+    public void testHallOfFame1() {
+        HallOfFame1 h = new HallOfFame1();
 
         int[] result1 = h.solution(3, new int[] { 10, 100, 20, 150, 1, 100, 200 });
         int[] result2 = h.solution(4, new int[] { 0, 300, 40, 300, 20, 70, 150, 50, 500, 1000 });

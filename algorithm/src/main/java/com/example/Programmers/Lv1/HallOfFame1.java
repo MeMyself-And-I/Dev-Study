@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 프로그래머스 Lv1 - 명예의 전당
  */
-public class HallOfFame {
+public class HallOfFame1 {
     public int[] solution(int k, int[] score) {
         int[] answer = new int[score.length];
         List<Integer> list = new ArrayList<>();
