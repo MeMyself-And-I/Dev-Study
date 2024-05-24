@@ -141,6 +141,9 @@ class Student implements Comparator<Student> {
 
 > 익명 클래스를 활용한 Comparator 인터페이스 구현 예제
 
+보통 Comparator 인터페이스를 활용할 때는 자주 사용할 일이 없다면 굳이 구현하여 사용하지 않고(객체 낭비)
+익명 클래스를 통해 compare() 메소드를 재정의하여 필요한 순간에만 사용하게 된다.
+
 ```java
 import java.util.Comparator;
 
