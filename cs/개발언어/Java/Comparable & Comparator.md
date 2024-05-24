@@ -70,7 +70,7 @@ class Student implements Comparable<Student> {
 ## Comparator<T> 인터페이스
 
 Comparator 인터페이스를 구현한 클래스에서는 **_compare()_** 메소드를 재정의하여 사용하게 된다.
-Comparator 인터페이스는 Comparable 인터페이스와 같이 객체를 정렬하는 데 사용되는 인터페이스입니다.
+Comparator 인터페이스는 Comparable 인터페이스와 같이 객체를 정렬하는 데 사용되는 인터페이스이다.
 기본 정렬 순서는 사전 편찬순(오름차순)이 된다.
 
 > Comparator 인터페이스 구현 예제
@@ -188,6 +188,105 @@ class Student {
 }
 ```
 
-## Comparable & Comparator와 정렬의 관게
+## Comparable & Comparator와 Java 정렬의 관계
 
-### 사용자 정의 정렬 가능
+### 사용자 정의 정렬이 가능하다.
+
+Java에서는 Arrays.sort(), Collections.sort()와 같은 정렬에서의 기본 정렬 값은 오름차순이다.
+내림차순을 하기 위해서는 Comparable의 compareTo()나 Comparator의 compare() 메소드를 재정의할 때 로직을 조금만 변경해주면 가능하다.
+Comparator를 통한 예제만 확인해보겠다.
+
+#### 오름차순에서의 두 수의 비교 결과에 따른 작동 방식
+
+- 음수일 경우 : 두 원소의 위치를 교환 안함
+- 양수일 경우 : 두 원소의 위치를 교환 함
+
+#### 내림차순에서의 두 수의 비교 결과에 따른 작동 방식
+
+- 음수일 경우 : 두 원소의 위치를 교환 함
+- 양수일 경우 : 두 원소의 위치를 교환 안함
+
+#### Comparator를 활용한 내림차순 정렬 예제
+
+실제 compare() 메소드 재정의 부분에서 오름차순이였다면 o1 - o2를 해줬겠지만 내림차순 정렬이기때문에 순서를 바꾸어 o2 - o1을 하게되면 내림차순 정렬이 되는 것을 볼 수 있다.
+
+ps. 아래 코드의 리스트는 사용자가 정의한 객체가 아닌 Java에서 사용하는 Integer형으로써 사실 Collections.sort(a, Comparator.reverseOrder());를 해주어도 내림차순 정렬을 할 수 있다!
+
+```java
+package com.example;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Integer> a = new ArrayList<>();
+        a.add(2);
+        a.add(3);
+        a.add(1);
+        a.add(5);
+        a.add(4);
+        a.add(7);
+        a.add(6);
+
+        Collections.sort(a, new Comparator<Integer>() {
+
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+                // 아래 주석의 리턴 방법도 내림차순 정렬의 똑같은 결과
+                // return o2.compareTo(o1);
+            }
+
+        });
+
+        for (Integer s : a) {
+            System.out.println(s); // 7 6 5 4 3 2 1
+        }
+
+    }
+}
+```
+
+#### Comparator를 활용한 사용자 정의 오름차순 정렬 예제
+
+아래 예제는 짧은 글자들을 우선하여 오름차순 정렬하는 예제이다.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        List<String> a = new ArrayList<>();
+        a.add("bb");
+        a.add("aa");
+        a.add("f");
+        a.add("g");
+        a.add("c");
+        a.add("d");
+        a.add("e");
+
+        Collections.sort(a, new Comparator<String>() {
+
+            @Override
+            public int compare(String o1, String o2) {
+                // 글자수가 다르다면 짧은 글자 우선 오름차순 정렬
+                if (o1.length() - o2.length() != 0) {
+                    return o1.length() - o2.length();
+                } else { // 글자수가 같다면 오름차순 정렬
+                    return o1.compareTo(o2);
+                }
+            }
+
+        });
+
+        for (String s : a) {
+            // c d e f g aa bb
+            System.out.println(s);
+        }
+
+    }
+}
+```
