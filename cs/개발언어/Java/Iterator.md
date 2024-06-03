@@ -2,7 +2,7 @@
 
 ---
 
-## Iterator<E> 인터페이스
+## Iterator<E\> 인터페이스
 
 자바의 Collection 인터페이스에서는 Iterator 인터페이스를 구현한 클래스의 인스턴스를 반환하는 iterator() 메소드를 정의하여 각 컬렉션 요소에 접근하는 방법을 제공하고 있다.
 따라서 Collection 인터페이스를 상속받는 List, Set, Queue와 같은 인터페이스에서도 iterator() 메소드를 사용할 수 있다.
@@ -71,7 +71,7 @@ for (String key : map.keySet()) {
 }
 ```
 
-## ListIterator<E> 인터페이스
+## ListIterator<E\> 인터페이스
 
 ListIterator 인터페이스는 Iterator 인터페이스를 상속받아 여러 기능을 추가한 인터페이스이다.
 Iterator 인터페이스는 컬렉션의 요소에 접근할 때 한 방향으로만 이동할 수 있지만, ListIterator 인터페이스는 요소의 대체, 추가, 양방향 이동을 지원한다.
